@@ -5,8 +5,8 @@
   "main": "systemjs.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lite":"lite-server -c lite-server.json",
-    "lite-server":"lite-server"
+    "lite": "lite-server -c lite-server.json",
+    "lite-server": "lite-server"
   },
   "keywords": [
     "angular2",
