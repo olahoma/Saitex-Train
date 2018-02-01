@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import {UserService} from "./userService";
 import {IUserService} from "./iuserService";
+import {IoCNames} from "./iocNames";
 @Component({
     selector :"Default-page",
     templateUrl:"src/Modules/App/DefaultPage.html"
@@ -8,9 +9,14 @@ import {IUserService} from "./iuserService";
 export class DefaultPage{
     public users :Array<any> = [];
     public selectedUser : any;
-    constructor(){
-        let userService : IUserService = new UserService();
-        this.users = userService.getUsers();
+    
+    constructor(us: UserService){
+        //let userService : IUserService = new UserService();
+        let self = this;
+        let userService : IUserService = window.ioc.reslove(IoCNames.IUserService);
+         us.getUsers().then(function(data:any){
+            self.users = data;
+        });
     }
   
 
