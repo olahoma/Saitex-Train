@@ -19,6 +19,8 @@ export class Promise {
     constructor() {
         this.self = this;
         return this.self;
+
+        
     }
     public resolve(data: any): Promise {
         this.self.data = data;
